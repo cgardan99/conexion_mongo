@@ -1,23 +1,12 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 import dotenv  from 'dotenv'
 
-//dotenv config
 dotenv.config()
 
-const connectDB = async () => {
-    try {
-        //database Name
-        const databaseName='gym';
-        const con = await mongoose.connect(`${process.env.DB_URL}`, { 
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    });
-        console.log(`Database connected : ${con.connection.host}`)
-    } catch (error) {
-        console.error(`Error: ${error.message}`)
-        process.exit(1)
-    }
-}
+mongoose.main_conn = mongoose.createConnection(process.env.DB_MAIN);
+mongoose.client_v_1 = mongoose.createConnection(process.env.DB_CLIENTES_V_1);
+mongoose.client_v_2 = mongoose.createConnection(process.env.DB_CLIENTES_V_2);
+mongoose.mensualidad_h_1 = mongoose.createConnection(process.env.DB_MENSUALIDAD_H_1);
+mongoose.mensualidad_h_2 = mongoose.createConnection(process.env.DB_MENSUALIDAD_H_2);
 
-export default connectDB
+export default mongoose;

@@ -1,18 +1,21 @@
 import connectDB from './backend/config/db.js'
-import userRoutes from './backend/routes/userRoute.js'
+import userRoutes from './backend/routes/userRoute.js';
+import clientsRoutes from './backend/routes/clientRoute.js';
 import express from 'express'
 import dotenv  from 'dotenv'
-
-//connect database
-connectDB()
+import bodyParser from 'body-parser';
 
 //dotenv config
 dotenv.config()
 
 const app = express()
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 //Creating API for user
 app.use('/api/users', userRoutes)
+app.use('/api/clients', clientsRoutes)
 
 const PORT = process.env.PORT || 5000
 
