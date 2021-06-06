@@ -19,6 +19,6 @@ const tiempoProgresoSchema = mongoose.Schema({
     }
 })
 
-const TiempoProgreso = mongoose.tiempoProgreso.model('TiempoProgreso', tiempoProgresoSchema)
+const TiempoProgreso = mongoose.main_conn.model('TiempoProgreso', tiempoProgresoSchema)
 
 export default TiempoProgreso

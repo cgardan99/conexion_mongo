@@ -22,7 +22,10 @@ export const createMensualidad = asyncHandler(async(req, res) => {
         pagado: data.pagado,
         oid: data.oid,
     })
-    res.json({creado: true});
+    res.json({
+        creado: true,
+        oid: created._id
+    });
 })
 
 export const updateMensualidad = asyncHandler(async(req, res) => {
@@ -37,7 +40,10 @@ export const updateMensualidad = asyncHandler(async(req, res) => {
         pagado: data.pagado,
         oid: data.oid,
     })
-    res.json({editado: true});
+    res.json({
+        editado: true,
+        oid: req.params.oid
+    });
 })
 
 export const deleteMensualidad = asyncHandler(async(req, res) => {

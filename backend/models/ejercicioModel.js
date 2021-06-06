@@ -28,6 +28,6 @@ const ejercicioSchema = mongoose.Schema({
     }
 })
 
-const Ejercicio = mongoose.ejercicio.model('Ejercicio', ejercicioSchema)
+const Ejercicio = mongoose.main_conn.model('Ejercicio', ejercicioSchema)
 
 export default Ejercicio

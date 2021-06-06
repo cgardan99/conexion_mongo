@@ -51,7 +51,10 @@ export const createClient = asyncHandler(async(req, res) => {
         peso: data.peso,
         sexo: data.sexo
     })
-    res.json({creado: true});
+    res.json({
+        creado: true,
+        oid: created._id
+    });
 })
 
 export const updateClient = asyncHandler(async(req, res) => {
@@ -71,7 +74,10 @@ export const updateClient = asyncHandler(async(req, res) => {
         peso: data.peso,
         sexo: data.sexo
     })
-    res.json({editado: true});
+    res.json({
+        editado: true,
+        oid: req.params.oid
+    });
 })
 
 export const deleteClient = asyncHandler(async(req, res) => {

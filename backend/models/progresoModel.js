@@ -28,6 +28,6 @@ const progresoSchema = mongoose.Schema({
     }
 })
 
-const Progreso = mongoose.progreso.model('Progreso', progresoSchema)
+const Progreso = mongoose.main_conn.model('Progreso', progresoSchema)
 
 export default Progreso
