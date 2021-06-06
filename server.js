@@ -1,6 +1,8 @@
 import connectDB from './backend/config/db.js'
 import userRoutes from './backend/routes/userRoute.js';
 import clientsRoutes from './backend/routes/clientRoute.js';
+import mensualidad1Routes from './backend/routes/mensualidad1Route.js';
+import mensualidad2Routes from './backend/routes/mensualidad2Route.js';
 import express from 'express'
 import dotenv  from 'dotenv'
 import bodyParser from 'body-parser';
@@ -16,6 +18,8 @@ app.use(bodyParser.json());
 //Creating API for user
 app.use('/api/users', userRoutes)
 app.use('/api/clients', clientsRoutes)
+app.use('/api/mensualidad1', mensualidad1Routes)
+app.use('/api/mensualidad2', mensualidad2Routes)
 
 const PORT = process.env.PORT || 5000
 
