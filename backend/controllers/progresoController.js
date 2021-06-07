@@ -13,6 +13,14 @@ export const getProgreso = asyncHandler(async(req, res) => {
     res.json(progreso);
 });
 
+export const getProgresosByClient = asyncHandler(async(req, res) => {
+    const progresos = await Progreso.find({
+        oid: req.params.oid
+    })
+    res.json(progresos);
+});
+
+
 export const createProgreso = asyncHandler(async(req, res) => {
     var data = req.body;
     const created = await Progreso.create({

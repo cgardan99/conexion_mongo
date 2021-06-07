@@ -13,6 +13,13 @@ export const getMensualidad = asyncHandler(async(req, res) => {
     res.json(mensualidad);
 });
 
+export const getMensualidadesCliente = asyncHandler(async(req, res) => {
+    const mensualidades = await MensualidadH1.find({
+        oid: req.params.oid
+    })
+    res.json(mensualidades);
+});
+
 export const createMensualidad = asyncHandler(async(req, res) => {
     var data = req.body;
     const created = await MensualidadH1.create({

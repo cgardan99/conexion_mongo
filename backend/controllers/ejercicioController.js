@@ -13,6 +13,13 @@ export const getEjercicio = asyncHandler(async(req, res) => {
     res.json(ejercicio);
 });
 
+export const getEjerciciosCliente = asyncHandler(async(req, res) => {
+    const ejercicios = await Ejercicio.find({
+        oid: req.params.oid
+    })
+    res.json(ejercicios);
+});
+
 export const createEjercicio = asyncHandler(async(req, res) => {
     var data = req.body;
     const created = await Ejercicio.create({
