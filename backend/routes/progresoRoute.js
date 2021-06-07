@@ -1,5 +1,5 @@
 import express from 'express'
-import { getProgresos, createProgreso, updateProgreso, deleteProgreso, getProgreso } from "../controllers/progresoController.js";
+import { getProgresos, createProgreso, updateProgreso, deleteProgreso, getProgreso, getProgresosByClient } from "../controllers/progresoController.js";
 const router = express.Router()
 
 

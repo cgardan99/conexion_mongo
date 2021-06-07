@@ -1,5 +1,5 @@
 import express from 'express'
-import { getEjercicios, createEjercicio, updateEjercicio, deleteEjercicio, getEjercicio } from "../controllers/ejercicioController.js";
+import { getEjercicios, createEjercicio, updateEjercicio, deleteEjercicio, getEjercicio, getEjerciciosCliente } from "../controllers/ejercicioController.js";
 const router = express.Router()
 
 

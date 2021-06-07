@@ -1,5 +1,5 @@
 import express from 'express'
-import { getMensualidades, createMensualidad, updateMensualidad, deleteMensualidad, getMensualidad } from "../controllers/mensualidadController1.js";
+import { getMensualidades, createMensualidad, updateMensualidad, deleteMensualidad, getMensualidad, getMensualidadesCliente } from "../controllers/mensualidadController1.js";
 const router = express.Router()
 
 
