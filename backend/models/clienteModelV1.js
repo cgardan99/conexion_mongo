@@ -12,7 +12,16 @@ const clienteSchemaV1 = mongoose.Schema({
     edad: {
         type: mongoose.Schema.Types.Number,
         required: "Falta tu edad",
+    },
+    isAdmin: {
+        type: mongoose.Schema.Types.Boolean,
+        required: "Necesito saber que clase de usuario es"
+    },
+    email: {
+        type: mongoose.Schema.Types.String,
+        required: "Falta el email"
     }
+
 })
 
 const ClienteV1 = mongoose.client_v_1.model('ClientV1', clienteSchemaV1)

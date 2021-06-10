@@ -14,6 +14,8 @@ export const getClients = asyncHandler(async(req, res) => {
             nombre: clients[client].nombre,
             apellidos: clients[client].apellidos,
             edad: clients[client].edad,
+            isAdmin: clients[client].isAdmin,
+            email: clients[client].email,
             peso: client2.peso,
             sexo: client2.sexo
         });
@@ -34,6 +36,8 @@ export const getClient = asyncHandler(async(req, res) => {
         nombre: client.nombre,
         apellidos: client.apellidos,
         edad: client.edad,
+        email: client.email,
+        isAdmin: client.isAdmin,
         peso: client2.peso,
         sexo: client2.sexo
     });
@@ -44,7 +48,9 @@ export const createClient = asyncHandler(async(req, res) => {
     const created = await ClienteV1.create({
         nombre: data.nombre,
         apellidos: data.apellidos,
-        edad: data.edad
+        edad: data.edad,
+        isAdmin: data.isAdmin,
+        email: data.email
     })
     const created2 = await ClienteV2.create({
         oid: created._id,
@@ -65,7 +71,9 @@ export const updateClient = asyncHandler(async(req, res) => {
     {
         nombre: data.nombre,
         apellidos: data.apellidos,
-        edad: data.edad
+        edad: data.edad,
+        isAdmin: data.isAdmin,
+        email: data.email
     })
     const created2 = await ClienteV2.findOneAndUpdate({
         oid: req.params.oid
