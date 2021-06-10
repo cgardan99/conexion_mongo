@@ -11,7 +11,7 @@ const ejercicioSchema = mongoose.Schema({
     },
     repeticiones: {
         type: mongoose.Schema.Types.String,
-        default: "6:00 - 7:00"
+        default: "Especifique el numero de repeticiones."
     },
     RM: {
         type: Boolean,
