@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  mongo_one:
+    container_name: db_main
+    image: mongo
+    command: mongod --dbpath /mongos/db1 --replSet clset
+    ports:
+      - 27017:27017
+    networks:
+      - cluster-repl
+    volumes:
+      - ./data/mongo_one:/data/db
+      - ./data/mongos/db1:/mongos/db1
+  mongo_two:
+    container_name: db_main_1
+    image: mongo
+    command: mongod --dbpath /mongos/db2 --replSet clset
+    ports:
+    - 27020:27017
+    networks:
+    - cluster-repl
+    volumes:
+      - ./data/mongo_two:/data/db
+      - ./data/mongos/db2:/mongos/db2
+
+networks:
+  cluster-repl:
